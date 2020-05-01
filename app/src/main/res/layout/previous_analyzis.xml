@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main_Screen.Scenario_Previous_Analyzis.controller.previous_analyzis">
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:weightSum="1"
+     android:paddingTop="@dimen/_10sdp"
+     android:orientation="vertical">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:layout_weight=".1"
+         android:gravity="center|left"
+         android:paddingLeft="@dimen/_10sdp"
+         android:orientation="horizontal">
+         <ImageView
+             android:layout_width="@dimen/_35sdp"
+             android:layout_height="@dimen/_35sdp"
+             android:src="@drawable/injection"
+             android:tint="@android:color/black"
+             android:padding="@dimen/_7sdp"
+             android:background="@drawable/lets_go_btn"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/previous_anal"
+             android:layout_marginLeft="@dimen/_10sdp"
+             android:textStyle="bold"
+             android:textSize="@dimen/_20sdp"
+             android:textColor="@android:color/black"/>
+     </LinearLayout>
+     <androidx.recyclerview.widget.RecyclerView
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:id="@+id/previous_anal_list"
+         android:paddingLeft="@dimen/_15sdp"
+         android:paddingTop="@dimen/_10sdp"
+         android:paddingBottom="@dimen/_10sdp"
+         android:paddingRight="@dimen/_15sdp"
+
+         android:layout_weight=".85"/>
+
+     <Button
+         android:layout_weight=".12"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:background="@drawable/lets_go_btn"
+         android:textAllCaps="false"
+         android:text="@string/speak_with_doctor"
+         android:textSize="@dimen/_14sdp"
+         android:id="@+id/speak_with_doc"
+         android:textColor="@android:color/black"
+         android:layout_marginLeft="@dimen/_30sdp"
+         android:layout_marginRight="@dimen/_30sdp"
+         android:layout_alignParentBottom="true"
+         android:layout_marginBottom="@dimen/_40sdp"
+         />
+
+ </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/auth_bg"
+    android:orientation="vertical"
+    tools:context=".Scenario_login.login">
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/_35sdp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center"/>
+            <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+                android:id="@+id/buttonGroup_lordOfTheRings"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="4dp"
+                app:borderColor="@android:color/black"
+                app:borderWidth="0dp"
+                app:divider="@android:color/white"
+                app:dividerWidth="7dp"
+                app:position="0"
+                >
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    app:drawable="@drawable/user"
+                    app:drawablePadding="@dimen/_5sdp"
+                    app:drawableGravity="left"
+                    android:background="@drawable/auth_bg_manual_left"
+                    app:selectedBackground="@drawable/auth_bg_selected_ledt"
+                    app:selectedTextColor="@android:color/black"
+                    app:text="@string/for_user"
+                    app:textSize="@dimen/_13sdp"
+                    app:textColor="@android:color/black" />
+
+                <com.addisonelliott.segmentedbutton.SegmentedButton
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/auth_bg_manual"
+                    android:padding="10dp"
+                    app:drawableGravity="left"
+                    app:drawable="@drawable/doc_img"
+                    app:drawablePadding="@dimen/_5sdp"
+                    app:selectedBackground="@drawable/auth_bg_selected"
+                    app:selectedTextColor="@android:color/black"
+                    app:text="@string/for_doc"
+                    app:textSize="@dimen/_13sdp"
+                    app:textColor="@android:color/black" />
+
+            </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+          <FrameLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/frag"
+              />
+
+        </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

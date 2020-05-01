@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:layout_marginTop="@dimen/_13sdp"
+    android:weightSum="1"
+    >
+   <ImageView
+       android:layout_weight=".1"
+       android:layout_width="0dp"
+       android:src="@drawable/menu"
+       android:id="@+id/menu"
+       android:padding="@dimen/_5sdp"
+       android:layout_height="match_parent"/>
+    <LinearLayout
+        android:layout_weight=".9"
+        android:layout_width="0dp"
+        android:gravity="center|right"
+        android:paddingRight="@dimen/_10sdp"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:text="@string/new_analyzing"
+            android:textSize="@dimen/_12sdp"
+            android:id="@+id/analzing"
+            android:textAllCaps="false"
+            android:background="@drawable/lets_go_btn"/>
+    </LinearLayout>
+</LinearLayout>
