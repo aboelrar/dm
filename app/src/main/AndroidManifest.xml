@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="www.dm.com">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,16 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Main_Screen.Scenario_messages.controller.Scenario_chat.chat"></activity>
-        <activity android:name=".Scenario_signup.signup" />
-        <activity android:name=".Scenario_login.login"></activity>
-        <activity android:name=".Lets_go.lets_go">
+        <activity android:name=".Scenario_signup.signup"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Scenario_login.controller.login"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Lets_go.lets_go"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main_Screen.MainActivity" />
+        <activity android:name=".Main_Screen.MainActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

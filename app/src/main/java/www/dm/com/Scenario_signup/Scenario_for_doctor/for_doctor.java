@@ -10,21 +10,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-import www.dm.com.Main_Screen.MainActivity;
+import com.android.volley.VolleyError;
+
+import es.dmoral.toasty.Toasty;
+import www.dm.com.NetworkLayer.Apicalls;
+import www.dm.com.NetworkLayer.NetworkInterface;
+import www.dm.com.NetworkLayer.ResponseModel;
 import www.dm.com.R;
-import www.dm.com.Scenario_login.loading;
-import www.dm.com.Scenario_login.login;
+import www.dm.com.Scenario_login.controller.loading;
+import www.dm.com.Scenario_login.controller.login;
+import www.dm.com.utils.utils;
+
+import static www.dm.com.utils.utils.yoyo;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class for_doctor extends Fragment implements View.OnClickListener {
+public class for_doctor extends Fragment implements View.OnClickListener, NetworkInterface {
 
     View view;
     Button sign_up;
     TextView sign_in;
+    EditText username;
+    EditText password;
+    EditText co_pass;
+    EditText email;
+    EditText collage;
 
     public for_doctor() {
         // Required empty public constructor
@@ -35,11 +49,17 @@ public class for_doctor extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.for_doctor, container, false);
+        view = inflater.inflate(R.layout.for_doctor, container, false);
 
         //DEFINE ALL VARS
         sign_in = view.findViewById(R.id.signin);
         sign_up = view.findViewById(R.id.signup);
+        username = view.findViewById(R.id.username);
+        email = view.findViewById(R.id.useremail);
+        password = view.findViewById(R.id.password);
+        co_pass = view.findViewById(R.id.co_password);
+        collage = view.findViewById(R.id.usercollage);
+
 
         //SET ON CLICK ITEM LISTNERS
         sign_in.setOnClickListener(this);
@@ -48,16 +68,87 @@ public class for_doctor extends Fragment implements View.OnClickListener {
         return view;
     }
 
+
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.signin)
-        {
+        if (view.getId() == R.id.signin) {
             startActivity(new Intent(getContext(), login.class));
+        } else if (view.getId() == R.id.signup) {
+            signup_validation();
         }
-        else if(view.getId() == R.id.signup)
-        {
-            loading loading = new loading();
-            loading.dialog(getContext(), R.layout.successful_login, .80);        }
 
     }
+
+    @Override
+    public void OnStart() {
+
+    }
+
+    @Override
+    public void OnResponse(ResponseModel model) {
+
+        //DISMISS DIALOG
+        new utils().dismiss_dialog(getContext());
+
+        loading loading = new loading();
+        loading.dialog(getContext(), R.layout.successful_login, .80);
+
+    }
+
+    @Override
+    public void OnError(VolleyError error) {
+        if(error.networkResponse.statusCode == 503)
+        {
+            //DISMISS DIALOG
+            new utils().dismiss_dialog(getContext());
+
+            Toasty.error(getContext(),getResources().getString(R.string.user_exsit),Toasty.LENGTH_LONG).show();
+        }
+    }
+
+
+    //SIGN UP VAILDATION
+    void signup_validation() {
+
+        if (username.getText().toString().length() < 5)  //VALIDATION ON USERNAME
+        {
+            String username_val = getResources().getString(R.string.user_val);
+            username.setError(username_val);
+            yoyo(R.id.username, username);
+        }
+        else if(email.getText().toString().length() < 6)  //VALIDATION ON EMAIL
+        {
+            String email_val = getResources().getString(R.string.email_val);
+            email.setError(email_val);
+            yoyo(R.id.useremail, email);
+        }
+        else if(collage.getText().toString().length() < 5)  //VALIDATION ON PASSWORD
+        {
+            String collage_val = getResources().getString(R.string.collage_val);
+            collage.setError(collage_val);
+            yoyo(R.id.usercollage, collage);
+        }
+        else if(password.getText().toString().length() < 6)  //VALIDATION ON PASSWORD
+        {
+            String pass_val = getResources().getString(R.string.password_val);
+            password.setError(pass_val);
+            yoyo(R.id.password, password);
+        }
+        else if(!co_pass.getText().toString().equals(password.getText().toString()))  //VALIDATION ON CONFIRM PASSWORD
+        {
+            String co_pass_val = getResources().getString(R.string.copassword_val);
+            co_pass.setError(co_pass_val);
+            yoyo(R.id.co_password, co_pass);
+        }
+        else {
+
+            //CALL PROGRESS DIALOG
+            new utils().set_dialog(getContext());
+
+            //CALL API
+            new Apicalls(getContext(),this).insertDoctor(username.getText().toString(),email.getText().toString(),
+                    password.getText().toString(),collage.getText().toString(),"doctor");
+        }
+    }
+
 }

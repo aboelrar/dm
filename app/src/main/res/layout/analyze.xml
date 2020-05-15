@@ -56,7 +56,7 @@
                     android:layout_gravity="center"
                     app:borderColor="@android:color/black"
                     app:borderWidth="0dp"
-                    app:divider="@android:color/white"
+
                     app:position="0"
                     >
 
@@ -197,7 +197,6 @@
                     android:layout_gravity="center"
                     app:borderColor="@android:color/black"
                     app:borderWidth="0dp"
-                    app:divider="@android:color/white"
                     app:position="0"
                     >
 
@@ -270,7 +269,6 @@
                     android:layout_gravity="center"
                     app:borderColor="@android:color/black"
                     app:borderWidth="0dp"
-                    app:divider="@android:color/white"
                     app:position="0"
                     >
 
@@ -369,7 +367,6 @@
                 android:layout_gravity="center"
                 app:borderColor="@android:color/black"
                 app:borderWidth="0dp"
-                app:divider="@android:color/white"
                 app:position="0"
                 >
 
@@ -489,7 +486,6 @@
                 android:layout_gravity="center"
                 app:borderColor="@android:color/black"
                 app:borderWidth="0dp"
-                app:divider="@android:color/white"
                 app:position="0"
                 >
 

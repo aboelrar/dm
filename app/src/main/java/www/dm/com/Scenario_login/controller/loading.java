@@ -1,4 +1,4 @@
-package www.dm.com.Scenario_login;
+package www.dm.com.Scenario_login.controller;
 
 import android.app.Activity;
 import android.app.Dialog;

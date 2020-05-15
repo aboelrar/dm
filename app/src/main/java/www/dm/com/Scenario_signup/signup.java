@@ -1,6 +1,7 @@
 package www.dm.com.Scenario_signup;
 
 import android.os.Bundle;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,7 @@ public class signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
         ButterKnife.bind(this);
+
 
         //ADD FRAGMENT TO PAGE AT FIRST
         new utils().Replace_Fragment(new for_user(), R.id.frag, this);

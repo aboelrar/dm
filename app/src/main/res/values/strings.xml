@@ -54,4 +54,12 @@
     <string name="notifcation">Notifcation</string>
     <string name="vibration">Vibration</string>
     <string name="logged_in_successfully">Logged In Successfully...</string>
+    <string name="user_val">Username is too short!</string>
+    <string name="email_val">Email is too short!</string>
+    <string name="password_val">Password is too short!</string>
+    <string name="copassword_val">Password dont match!</string>
+    <string name="collage_val">Collage is too short!</string>
+    <string name="user_exsit">User Already Exist</string>
+    <string name="user_not_found">User Not Found</string>
+    <string name="loading_c">Loading...</string>
 </resources>

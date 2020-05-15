@@ -8,93 +8,107 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <EditText
-            android:layout_marginRight="@dimen/_10sdp"
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_30sdp"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:background="@drawable/auth_user_input"
             android:hint="@string/username"
-            android:paddingLeft="@dimen/_15sdp"/>
-        <EditText
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_18sdp"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_35sdp"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/auth_user_input"
-            android:hint="@string/email"
-            android:paddingLeft="@dimen/_15sdp"/>
-        <EditText
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_18sdp"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_35sdp"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/auth_user_input"
-            android:hint="@string/email"
-            android:paddingLeft="@dimen/_15sdp"/>
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_3sdp" />
 
         <EditText
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_18sdp"
-            android:inputType="textPassword"
+            android:id="@+id/useremail"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/auth_user_input"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_3sdp" />
+
+        <EditText
+            android:id="@+id/usercollage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/auth_user_input"
+            android:hint="@string/collage"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_3sdp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:background="@drawable/auth_user_input"
             android:hint="@string/password"
-            android:paddingLeft="@dimen/_15sdp"/>
-        <EditText
-            android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_18sdp"
             android:inputType="textPassword"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_3sdp" />
+
+        <EditText
+            android:id="@+id/co_password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:background="@drawable/auth_user_input"
             android:hint="@string/confirm_password"
-            android:paddingLeft="@dimen/_15sdp"/>
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_3sdp" />
 
         <Button
+            android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
-            android:background="@drawable/auth_button"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:background="@drawable/auth_button"
             android:text="@string/sign_up"
-            android:id="@+id/signup"
-            android:textSize="@dimen/_15sdp"
-            android:textColor="@android:color/black"
             android:textAllCaps="false"
-            />
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_15sdp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_12sdp"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:text="@string/don_t_have_account_lets"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="@string/don_t_have_account_lets"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
                 android:id="@+id/signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_3sdp"
+                android:text="@string/sign_in_line"
                 android:textColor="@color/f_color"
-                android:text="@string/sign_in_line"/>
+                android:textSize="@dimen/_12sdp" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

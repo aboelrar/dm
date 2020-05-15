@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/auth_bg"
     android:orientation="vertical"
-    tools:context=".Scenario_login.login">
+    tools:context=".Scenario_login.controller.login">
     <androidx.core.widget.NestedScrollView
 
         android:layout_width="match_parent"
@@ -35,11 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="4dp"
                 app:borderColor="@android:color/black"
                 app:borderWidth="0dp"
-                app:divider="@android:color/white"
-                app:dividerWidth="7dp"
                 app:position="0"
                 >
 

@@ -12,9 +12,7 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 
 import androidx.annotation.RequiresApi;
@@ -27,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.dm.com.R;
-import www.dm.com.Scenario_login.login;
+import www.dm.com.Scenario_login.controller.login;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.

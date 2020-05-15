@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import www.dm.com.R;
-import www.dm.com.Scenario_login.login;
+import www.dm.com.Scenario_login.controller.login;
 
 public class lets_go extends AppCompatActivity implements View.OnClickListener {
 
