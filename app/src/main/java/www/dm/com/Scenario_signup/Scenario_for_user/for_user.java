@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.google.gson.Gson;
 
 import es.dmoral.toasty.Toasty;
 import www.dm.com.NetworkLayer.Apicalls;
@@ -22,6 +23,9 @@ import www.dm.com.NetworkLayer.ResponseModel;
 import www.dm.com.R;
 import www.dm.com.Scenario_login.controller.loading;
 import www.dm.com.Scenario_login.controller.login;
+import www.dm.com.Scenario_signup.model.signupRootClass;
+import www.dm.com.Scenario_signup.model.signupUserDatum;
+import www.dm.com.local_data.send_data;
 import www.dm.com.utils.utils;
 
 import static www.dm.com.utils.utils.yoyo;
@@ -38,6 +42,8 @@ public class for_user extends Fragment implements View.OnClickListener, NetworkI
     EditText password;
     EditText co_pass;
     EditText email;
+    signupRootClass signupRootClass;
+    www.dm.com.Scenario_signup.model.signupUserDatum signupUserDatum;
 
     public for_user() {
         // Required empty public constructor
@@ -85,6 +91,18 @@ public class for_user extends Fragment implements View.OnClickListener, NetworkI
     public void OnResponse(ResponseModel model) {
         //DISMISS DIALOG
         new utils().dismiss_dialog(getContext());
+
+        //CONVERT FROM OBJECT
+        Gson gson = new Gson();
+        signupRootClass = gson.fromJson(""+model.getResponse(), signupRootClass.class);
+        signupUserDatum = signupRootClass.getUserData();
+
+        //SAVE IN LOCAL DATA
+        send_data.send_name(getContext(), signupUserDatum.getUserName());
+        send_data.send_email(getContext(), signupUserDatum.getUserEmail());
+        send_data.send_id(getContext(), signupUserDatum.getUserId());
+        send_data.login_status(getContext(), true);
+
 
         loading loading = new loading();
         loading.dialog(getContext(), R.layout.successful_login, .80);

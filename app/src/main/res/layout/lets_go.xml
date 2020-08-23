@@ -1,57 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/letsgo_img"
     tools:context=".Lets_go.lets_go">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
             android:layout_width="@dimen/_190sdp"
             android:layout_height="@dimen/_90sdp"
-            android:src="@drawable/trectangle_ci"
-            android:tint="@color/f_color"
+            android:layout_marginTop="@dimen/_70sdp"
             android:scaleType="fitXY"
-            android:layout_marginTop="@dimen/_70sdp"/>
+            android:src="@drawable/trectangle_ci"
+            android:tint="@color/f_color" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_to"
-            android:layout_marginTop="@dimen/_90sdp"
-            android:textColor="@android:color/black"
             android:layout_marginLeft="@dimen/_50sdp"
-            android:textSize="@dimen/_35sdp"/>
+            android:layout_marginTop="@dimen/_90sdp"
+            android:text="@string/welcome_to"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_35sdp" />
+
         <ImageView
             android:layout_width="@dimen/_160sdp"
             android:layout_height="@dimen/_70sdp"
-            android:src="@drawable/app_logo"
             android:layout_alignParentTop="true"
-            android:tint="@color/f_color"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/_155sdp"
-            />
+            android:src="@drawable/app_logo"
+            android:tint="@color/f_color" />
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_270sdp"
-            android:scaleType="fitXY"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/docs_images_is"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/docs_images_is" />
+
         <Button
+            android:id="@+id/lets_go"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_55sdp"
-            android:background="@drawable/lets_go_btn"
-            android:textAllCaps="false"
-            android:text="@string/let_s_go"
-            android:textSize="@dimen/_14sdp"
-            android:id="@+id/lets_go"
-            android:textColor="@android:color/black"
+            android:layout_alignParentBottom="true"
             android:layout_marginLeft="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_30sdp"
-            android:layout_alignParentBottom="true"
             android:layout_marginBottom="@dimen/_40sdp"
-            />
+            android:background="@drawable/lets_go_btn"
+            android:text="@string/let_s_go"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp" />
     </RelativeLayout>
 </LinearLayout>

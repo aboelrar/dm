@@ -63,6 +63,8 @@ public class APIRouter {
                 if (params != null && values != null) {
                     for (int i = 0; i < params.size(); i++) {
                         hashMap.put(params.get(i), values.get(i));
+                        Log.e("paramms", params.get(i) + "000" + values.get(i));
+
                     }
                 }
 

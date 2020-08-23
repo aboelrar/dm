@@ -20,7 +20,9 @@ import www.dm.com.NetworkLayer.Apicalls;
 import www.dm.com.NetworkLayer.NetworkInterface;
 import www.dm.com.NetworkLayer.ResponseModel;
 import www.dm.com.R;
+import www.dm.com.Scenario_forget_password.controller.forget_password;
 import www.dm.com.Scenario_login.model.login_model;
+import www.dm.com.Scenario_signup.signup;
 import www.dm.com.local_data.send_data;
 import www.dm.com.utils.utils;
 
@@ -40,6 +42,8 @@ public class login extends AppCompatActivity implements View.OnClickListener, Ne
     EditText password;
 
     login_model login_model;
+    @BindView(R.id.forget_pass)
+    TextView forgetPass;
 
 
     @Override
@@ -51,6 +55,7 @@ public class login extends AppCompatActivity implements View.OnClickListener, Ne
         //SET ON CLICK LISTNER
         signup.setOnClickListener(this);
         login.setOnClickListener(this);
+        forgetPass.setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +64,8 @@ public class login extends AppCompatActivity implements View.OnClickListener, Ne
             startActivity(new Intent(login.this, www.dm.com.Scenario_signup.signup.class));
         } else if (view.getId() == R.id.login) {
             login_validation();
+        } else if (view.getId() == R.id.forget_pass) {
+            startActivity(new Intent(login.this, forget_password.class));
         }
     }
 
@@ -101,9 +108,10 @@ public class login extends AppCompatActivity implements View.OnClickListener, Ne
         login_model = gson.fromJson("" + model.getResponse(), www.dm.com.Scenario_login.model.login_model.class);
 
         //SAVE IN LOCAL DATA
-        send_data.send_name(this,login_model.getName());
-        send_data.send_email(this,login_model.getUserEmail());
-        send_data.send_id(this,login_model.getId());
+        send_data.send_name(this, login_model.getName());
+        send_data.send_email(this, login_model.getUserEmail());
+        send_data.send_id(this, login_model.getId());
+        send_data.login_status(this, true);
 
         //OPEN DIALOG
         loading loading = new loading();
@@ -113,11 +121,10 @@ public class login extends AppCompatActivity implements View.OnClickListener, Ne
 
     @Override
     public void OnError(VolleyError error) {
-        if (error.networkResponse.statusCode == 503) {
-            //DISMISS DIALOG
-            new utils().dismiss_dialog(this);
 
-            Toasty.error(this, getResources().getString(R.string.user_not_found), Toasty.LENGTH_LONG).show();
-        }
+        //DISMISS DIALOG
+        new utils().dismiss_dialog(this);
+
+        Toasty.error(this, getResources().getString(R.string.user_not_found), Toasty.LENGTH_LONG).show();
     }
 }

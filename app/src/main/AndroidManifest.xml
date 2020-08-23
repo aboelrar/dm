@@ -5,19 +5,30 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main_Screen.Scenario_messages.controller.Scenario_chat.chat"></activity>
-        <activity android:name=".Scenario_signup.signup"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Scenario_login.controller.login"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Lets_go.lets_go"
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <activity android:name=".Scenario_reset_password.controller.reset_password"></activity>
+        <activity android:name=".Scenario_forget_password.controller.forget_password" />
+        <activity android:name=".Main_Screen.Scenario_analyzes_dates.controller.anaylzes_dates" />
+        <activity android:name=".Main_Screen.Scenario_messages.controller.Scenario_chat.chat" />
+        <activity
+            android:name=".Scenario_signup.signup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Scenario_login.controller.login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Lets_go.lets_go"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,8 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main_Screen.MainActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Main_Screen.MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

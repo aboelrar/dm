@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/_10sdp"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingRight="@dimen/_10sdp"
+    tools:context=".Main_Screen.Scenario_analyzes_dates.controller.anaylzes_dates">
+
+
+    <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+        android:id="@+id/days_segmants"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:gravity="center"
+        app:borderColor="@android:color/black"
+        app:borderWidth="0dp"
+        app:position="0"
+        app:radius="@dimen/_5sdp">
+
+        <com.addisonelliott.segmentedbutton.SegmentedButton
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_weight=".6"
+            android:background="@drawable/analyze_segment_bg"
+            app:drawableGravity="left"
+            app:selectedBackground="@drawable/lets_go_btn"
+            app:selectedButtonRadius="@dimen/_7sdp"
+            app:selectedTextColor="@android:color/black"
+            app:text="Day 1"
+            android:id="@+id/day"
+            app:textColor="@android:color/black"
+            app:textSize="@dimen/_13sdp" />
+
+
+
+    </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sugar_per"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_23sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:gravity="center|left"
+                    android:text="@string/saim"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".27"
+                    android:id="@+id/saim"
+                    android:background="@drawable/sugar_per_bg"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:gravity="center|left"
+                    android:text="@string/after_breakfast"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".27"
+                    android:id="@+id/after_b"
+                    android:background="@drawable/sugar_per_bg"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:gravity="center|left"
+                    android:text="@string/before_lunch"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".27"
+                    android:id="@+id/before_l"
+                    android:background="@drawable/sugar_per_bg"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:gravity="center|left"
+                    android:text="@string/after_lunch"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".27"
+                    android:id="@+id/after_l"
+                    android:background="@drawable/sugar_per_bg"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:gravity="center|left"
+                    android:text="@string/before_dinner"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".27"
+                    android:id="@+id/before_d"
+                    android:background="@drawable/sugar_per_bg"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:gravity="center|left"
+                    android:text="@string/after_dinner"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".27"
+                    android:id="@+id/after_d"
+                    android:background="@drawable/sugar_per_bg"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:gravity="center|left"
+                    android:text="@string/midnight"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".27"
+                    android:id="@+id/mid_night"
+                    android:background="@drawable/sugar_per_bg"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/days_analyzes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_40sdp"
+                android:background="@drawable/lets_go_btn"
+                android:text="@string/done"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14sdp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

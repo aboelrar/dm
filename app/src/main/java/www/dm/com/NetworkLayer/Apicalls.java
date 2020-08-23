@@ -39,13 +39,11 @@ public class Apicalls {
     //----------------------------------------------------------------------------------------------
 
     /**
-     * @func GET ALL SPECIALITIES
+     * @func SET SUGAR DATA
      */
 
-    public void get_all_specialities() throws JSONException {
-
-        apiRouter.makeAdvancedRequest(Apiclient.ALL_SPECIALITIES.getURL(), Request.Method.GET, Apiclient.ALL_SPECIALITIES.getParams(), null, null);
-
+    public void SET_SUAGR_DATA(String user_id, String sugar_type, String sugar_per, String pregnancy, String pharmaceutical, String sugar_since, String complications, String insulin_type, String dose1, String dose2, String dose3, String dose4, String dose5) throws JSONException {
+        apiRouter.performRequest(Apiclient.SET_SUGAR_DATA.getURL(), Apiclient.SET_SUGAR_DATA.getParams(), Arrays.asList(user_id, sugar_type, sugar_per, pregnancy, pharmaceutical, sugar_since, complications, insulin_type, dose1, dose2, dose3, dose4, dose5), Request.Method.POST, 0);
     }
 
 
@@ -57,42 +55,26 @@ public class Apicalls {
 
     public void insertDoctor(final String name, final String email, final String password, final String collage, final String type) {
 
-        apiRouter.performRequest(Apiclient.INSERT_USER.getURL(), Apiclient.INSERT_USER.getParams(), Arrays.asList(email, password, name, type,collage), Request.Method.POST, 2);
+        apiRouter.performRequest(Apiclient.INSERT_USER.getURL(), Apiclient.INSERT_USER.getParams(), Arrays.asList(email, password, name, type, collage), Request.Method.POST, 2);
 
     }
 
 
     //----------------------------------------------------------------------------------------------
 
-    /**
-     * @func GET ALL DOCTOR SPECIALIY
-     */
-
-    public void doctor_speciality(final int id) throws JSONException {
-
-        apiRouter.makeAdvancedRequest(Apiclient.ALL_DOCS_SPECI.getURL(), Request.Method.POST, Apiclient.ALL_DOCS_SPECI.getParams(), Arrays.asList("" + id), null);
-
-    }
-
 
     //----------------------------------------------------------------------------------------------
 
     /**
-     * @func Accept Offer
+     * @func SET DIALY DATA
      */
 
-    public void doctor_details(final String doctor_id) {
+    public void set_dialy_data(final String user_id, String day_id, String after_breakfast, String before_lunch, String after_lunch, String before_dinner, String after_dinner, String midnight) {
 
-        try {
-            apiRouter.makeAdvancedRequest(Apiclient.DOCTORS_DETAILS.getURL(), Request.Method.POST, Apiclient.DOCTORS_DETAILS.getParams(), Arrays.asList(doctor_id), null);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        apiRouter.performRequest(Apiclient.DIALY_SET_DATA.getURL(), Apiclient.DIALY_SET_DATA.getParams(), Arrays.asList(user_id, day_id, after_breakfast
+                , before_lunch, after_lunch, before_dinner, after_dinner, midnight), Request.Method.POST, 2);
 
     }
-
-
-
 
 
     //----------------------------------------------------------------------------------------------
@@ -129,23 +111,9 @@ public class Apicalls {
 
     public void update_personal_info(String name, String phone, String email, String password, String image_url, String patient_history) throws JSONException {
 
-        apiRouter.makeAdvancedRequest(Apiclient.UPDATE_USER_INFO.getURL(), Request.Method.POST, Apiclient.UPDATE_USER_INFO.getParams(), Arrays.asList(name, phone, email, password, image_url ,patient_history), null);
+        apiRouter.makeAdvancedRequest(Apiclient.UPDATE_USER_INFO.getURL(), Request.Method.POST, Apiclient.UPDATE_USER_INFO.getParams(), Arrays.asList(name, phone, email, password, image_url, patient_history), null);
 
     }
-
-
-    //----------------------------------------------------------------------------------------------
-
-    /**
-     * @func Get Complaint Type
-     */
-
-    public void get_complaint_type() throws JSONException {
-
-        apiRouter.makeAdvancedRequest(Apiclient.GET_COMPLAINT_TYPE.getURL(), Request.Method.GET, Apiclient.ALL_SPECIALITIES.getParams(), null, null);
-
-    }
-
 
     //----------------------------------------------------------------------------------------------
 
@@ -153,9 +121,9 @@ public class Apicalls {
      * @func Make Complaint
      */
 
-    public void make_complaint(String type_id, String message,String consultation_id) throws JSONException {
+    public void make_complaint(String type_id, String message, String consultation_id) throws JSONException {
 
-        apiRouter.makeAdvancedRequest(Apiclient.MAKE_COMPLAINT.getURL(), Request.Method.POST, Apiclient.MAKE_COMPLAINT.getParams(), Arrays.asList(type_id, message,consultation_id), null);
+        apiRouter.makeAdvancedRequest(Apiclient.MAKE_COMPLAINT.getURL(), Request.Method.POST, Apiclient.MAKE_COMPLAINT.getParams(), Arrays.asList(type_id, message, consultation_id), null);
 
     }
 
@@ -261,7 +229,6 @@ public class Apicalls {
         apiRouter.makeAdvancedRequest(Apiclient.CONSULTATION_FILES.getURL(), Request.Method.POST, Apiclient.CONSULTATION_FILES.getParams(), Arrays.asList(consultation_id), null);
 
     }
-
 
 
     //----------------------------------------------------------------------------------------------

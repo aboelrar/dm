@@ -116,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/forget_pass"
                     android:text="@string/forget_password"
                     android:textSize="@dimen/_12sdp" />
 

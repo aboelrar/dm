@@ -26,6 +26,7 @@ import java.util.List;
 
 import www.dm.com.R;
 import www.dm.com.Scenario_login.controller.login;
+import www.dm.com.local_data.send_data;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -247,6 +248,9 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.logout) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                send_data.login_status(getContext(),false);
+            }
             getActivity().startActivity(new Intent(getActivity(), login.class));
             getActivity().finish();
 
